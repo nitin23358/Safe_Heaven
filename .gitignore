@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+backend/.env
+*.log
+.DS_Store
+backend/data/osm_cache/
+ml/safety_model.pkl
+frontend/node_modules/.vite/

@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Demo User",
+    "email": "demo@safehaven.com",
+    "password": "$2a$10$d1/XLzG2z36K3ia597Rdw.2XKzT53gEx1rlJkKYxBTZ7ZqTWWoxQm",
+    "role": "Regular"
+  },
+  {
+    "id": 2,
+    "name": "Test User",
+    "email": "verify@test.com",
+    "password": "$2a$10$Jo6nqn8odqagAsOZUxSt3OOkGY816p1OVkA1MSSNHGn2WccZq13Fu",
+    "role": "Regular"
+  },
+  {
+    "id": 3,
+    "name": "nitin",
+    "email": "nitin@gmail.com",
+    "password": "$2a$10$EvbHIDWH9/xwP4ljX61v.OzVaxzr1SU4qTDHACkGOZeNzE3eco/I2",
+    "role": "Regular"
+  }
+]

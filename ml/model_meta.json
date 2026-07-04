@@ -1,0 +1,46 @@
+{
+  "model_type": "RandomForestRegressor",
+  "features": [
+    "crime_count",
+    "avg_severity",
+    "night_crime_ratio",
+    "avg_rating",
+    "women_review_ratio",
+    "lighting_score",
+    "walkability",
+    "visibility",
+    "public_transport",
+    "people_density",
+    "security_feeling",
+    "crime_severity_index",
+    "night_risk_index",
+    "environment_score",
+    "community_trust"
+  ],
+  "mae": 0.48,
+  "r2": 0.994,
+  "cv_r2_mean": 0.989,
+  "top_features": [
+    {
+      "name": "night_crime_ratio",
+      "importance": 0.2916
+    },
+    {
+      "name": "avg_rating",
+      "importance": 0.1876
+    },
+    {
+      "name": "women_review_ratio",
+      "importance": 0.18
+    },
+    {
+      "name": "community_trust",
+      "importance": 0.1768
+    },
+    {
+      "name": "night_risk_index",
+      "importance": 0.1202
+    }
+  ],
+  "trained_on": "Delhi integrated dataset (NCRB + Safetipin + community reviews)"
+}
