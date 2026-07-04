@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
+const { signToken } = require('../lib/jwtHelper');
 const db = require('../db');
 const userStore = require('../lib/userStore');
 const { isDbConnected } = require('../lib/dbStatus');
 
-function signToken(userId) {
-  return jwt.sign({ id: userId }, process.env.JWT_SECRET || 'dev_secret', {
+function createToken(userId) {
+  return signToken({ id: userId }, process.env.JWT_SECRET || 'dev_secret', {
     expiresIn: process.env.JWT_EXPIRES_IN || '24h',
   });
 }
@@ -83,7 +83,7 @@ router.post('/register', async (req, res) => {
       user = await userStore.register(name, email, password);
     }
 
-    const token = signToken(user.id);
+    const token = createToken(user.id);
 
     res.status(201).json({ token, user });
   } catch (error) {
@@ -109,7 +109,7 @@ router.post('/login', async (req, res) => {
       user = await userStore.login(email, password);
     }
 
-    const token = signToken(user.id);
+    const token = createToken(user.id);
 
     res.json({ token, user });
   } catch (error) {
