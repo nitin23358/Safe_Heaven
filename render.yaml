@@ -3,8 +3,10 @@ services:
     name: safehaven-delhi
     runtime: node
     plan: free
+    region: oregon
     healthCheckPath: /api/health
-    buildCommand: npm install --prefix frontend && npm run build --prefix frontend && npm install --prefix backend
+    # NODE_ENV=development is required during build so Vite (devDependency) gets installed
+    buildCommand: NODE_ENV=development npm install --prefix frontend && npm run build --prefix frontend && npm install --prefix backend --omit=dev
     startCommand: node backend/server.js
     envVars:
       - key: NODE_ENV
