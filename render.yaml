@@ -3,6 +3,7 @@ services:
     name: safehaven-delhi
     runtime: node
     plan: free
+    healthCheckPath: /api/health
     buildCommand: npm install --prefix frontend && npm run build --prefix frontend && npm install --prefix backend
     startCommand: node backend/server.js
     envVars:
@@ -10,5 +11,3 @@ services:
         value: production
       - key: JWT_SECRET
         generateValue: true
-      - key: PORT
-        value: 10000
